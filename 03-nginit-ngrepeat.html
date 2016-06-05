@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <script src="angular.js"></script>
+</head>
+
+<body ng-app>
+    <p ng-init="dangerousDogs=[
+    {name:'pitbull'},
+    {name:'rottweiler'},
+    {name:'siberien husky'}
+    ]">
+    </p>
+    <li ng-repeat="dog in dangerousDogs">
+        {{dog.name}}
+    </li>
+</body>
+
+</html>
