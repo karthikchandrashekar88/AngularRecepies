@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <script src="angular.js"></script>
+    <script>
+        var gisApp = angular.module("ghostInTheShell", []);
+
+        gisApp.controller("gisController", function($scope) {
+            $scope.characters = [{
+                name: "kusanagi",
+                occupation: "major"
+            }, {
+                name: "saito",
+                occupation: "sniper"
+            }, {
+                name: "paz",
+                occupation: "ex-mafia"
+            }, {
+                name: "hideo kuze",
+                occupation: "revolutioniary hero"
+            }, {
+                name: "kozundo goda",
+                occupation: "hero producer"
+            }];
+            $scope.gisProtagonist = 'kozundo goda';
+        });
+    </script>
+</head>
+
+<body ng-app="ghostInTheShell">
+    <div ng-controller="gisController">
+        <table border = "1px">
+            <tr>
+                <th>Name</th>
+                <th>Occupation</th>
+            </tr>
+            <tr ng-repeat="character in characters">
+                <td>
+                    {{character.name}}
+                </td>
+                <td>
+                    <i>{{character.occupation}}</i>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
