@@ -4,18 +4,26 @@
     <script src="angular.js"></script>
     <script>
       var gisApp = angular.module("ghostInTheShell",[]);
-      gisApp.directive('div', function() {
+      gisApp.directive('gis', function() {
         var directive = {};
         directive.restrict = 'E'; /* restrict this directive to elements */
-        directive.template = "Fall out scrubber project";
+        directive.template = "Fall out scrubber project ";
         return directive;
       });
+
+      gisApp.controller('changeImgCtrl',['$scope',function($scope){
+        $scope.changeImg = function(){
+          console.log('changeImg called');
+        };
+      }]);
     </script>
 </head>
 
 <body ng-app="ghostInTheShell">
-  <div ng-controller="gisController">
+  <div ng-controller="changeImgCtrl">
+    <h2>Ghost in the shell</h2>
     <gis>This div will be replaced</gis>
+    <button ng-click="changeImg()">Change Image</button>
   </div>
 </body>
 
