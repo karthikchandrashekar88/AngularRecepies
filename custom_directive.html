@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <script src="angular.js"></script>
+    <script>
+      var gisApp = angular.module("ghostInTheShell",[]);
+      gisApp.directive('div', function() {
+        var directive = {};
+        directive.restrict = 'E'; /* restrict this directive to elements */
+        directive.template = "Fall out scrubber project";
+        return directive;
+      });
+    </script>
+</head>
+
+<body ng-app="ghostInTheShell">
+  <div ng-controller="gisController">
+    <gis>This div will be replaced</gis>
+  </div>
+</body>
+
+</html>
